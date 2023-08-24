@@ -17,11 +17,16 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: *******@gmail.com
-    password: ***************
+    username: wesleeylirac12@gmail.com
+    password: nrryuvgijykjmjqx
     properties:
       mail:
         smtp:
           auth: true
           starttls:
             enable: true
+
+  rabbitmq:
+    addresses: amqps://******:NdHi8c6sw-XpYT-L5APgHT3YPi2iUpCB@sparrow.rmq.cloudamqp.com/murwkxya
+    template:
+      default-receive-queue: ms.project
