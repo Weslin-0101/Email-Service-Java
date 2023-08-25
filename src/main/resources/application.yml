@@ -25,3 +25,8 @@ spring:
           auth: true
           starttls:
             enable: true
+
+  rabbitmq:
+    addresses: *******
+    template:
+      default-receive-queue: ms.project
