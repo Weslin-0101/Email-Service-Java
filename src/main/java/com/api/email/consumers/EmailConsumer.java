@@ -1,6 +1,6 @@
 package com.api.email.consumers;
 
-import com.api.email.dtos.EmailDTO;
+import com.api.email.dtos.EmailRecordDTO;
 import com.api.email.model.EmailEntity;
 import com.api.email.services.EmailService;
 import lombok.AllArgsConstructor;
@@ -15,11 +15,9 @@ public class EmailConsumer {
     private final EmailService emailService;
 
     @RabbitListener(queues = "${spring.rabbitmq.template.default-receive-queue}")
-    public void listen(@Payload EmailDTO emailDTO) {
+    public void listen(@Payload EmailRecordDTO emailDTO) {
         EmailEntity emailEntity = new EmailEntity();
         BeanUtils.copyProperties(emailDTO, emailEntity);
         emailService.sendEmail(emailEntity);
-
-        System.out.println("Email Status: " + emailEntity.getStatusEmail().toString());
     }
 }

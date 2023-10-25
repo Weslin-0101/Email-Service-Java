@@ -1,9 +1,12 @@
+server:
+  port: 8082
+
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5440/springbootdb
-    username: postgresql
-    password: desafio
+    url: jdbc:postgresql://localhost:5440/emaildatabase
+    username: weslin
+    password: weslin
 
   jpa:
     hibernate:
@@ -17,8 +20,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: *******@gmail.com
-    password: ***************
+    username: *********@gmail.com
+    password: ***********
     properties:
       mail:
         smtp:
@@ -27,6 +30,6 @@ spring:
             enable: true
 
   rabbitmq:
-    addresses: *******
+    addresses: amqps://murwkxya:***@sparrow.rmq.cloudamqp.com/murwkxya
     template:
       default-receive-queue: ms.project
